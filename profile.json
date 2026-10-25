@@ -1,61 +1,71 @@
 {
     "name": "Arya R Nair",
     "tagline": "CSE Student & Aspiring Web Developer",
-    "bio": "Second-year B.Tech CSE student at T.K.M. College of Engineering, Kollam, interested in frontend development and data science. I like turning everyday problems into working web projects, and I'm currently building a digital wardrobe sharing platform.",
-    "interests": ["Frontend Development", "Data Science"],
+    "now": "Wardrobe Randomizer + Networking, a digital wardrobe sharing platform in Java",
+    "bio": "Second-year B.Tech CSE student at T.K.M. College of Engineering, Kollam, interested in frontend development, data science and AI. I like turning everyday problems into working web projects, and I'm currently building a digital wardrobe sharing platform in Java.",
+    "interests": ["Frontend Development", "Data Science", "AI Development"],
     "skills": [
-        "Python",
-        "Java",
-        "C",
-        "MySQL",
-        "HTML",
-        "CSS",
-        "Git",
-        "GitHub",
-        "VS Code"
+        { "group": "Languages", "items": ["Python", "Java", "C"] },
+        { "group": "Web", "items": ["HTML", "CSS", "JavaScript"] },
+        { "group": "Database", "items": ["MySQL", "SQLite"] },
+        { "group": "Tools", "items": ["Git", "GitHub", "VS Code", "NetBeans", "Maven"] }
     ],
     "education": [
         {
             "school": "T.K.M. College of Engineering, Kollam",
             "degree": "B.Tech, Computer Science & Engineering",
-            "period": "Currently in second year"
-        }
-    ],
-    "involvement": [
-        {
-            "role": "Executive Member",
-            "org": "Web3 Club",
-            "note": "Part of the core team organising club activities."
-        },
-        {
-            "role": "Member",
-            "org": "IEI (The Institution of Engineers, India)",
-            "note": "Student member."
-        },
-        {
-            "role": "Participant",
-            "org": "FOSSSoC-S1, FOSS TKMCE",
-            "note": "Built and published this portfolio with Git, GitHub Pages and an automated pull request."
+            "period": "2025 – 2029 (expected) · Currently in second year"
         }
     ],
     "projects": [
         {
             "title": "Wardrobe Randomizer + Networking",
-            "desc": "A web platform where users digitize their wardrobe, get auto-generated outfit combinations, and borrow items from nearby people instead of buying new ones.",
+            "desc": "A web platform where users digitize their wardrobe, get auto-generated outfit combinations, and borrow items from nearby people instead of buying new ones. The backend is written in Java with a native HTTP server and a SQLite database.",
             "features": [
                 "Digital wardrobe: upload clothes and accessories to build a personal catalog",
-                "Outfit generator that randomizes combinations from your own items",
+                "Outfit randomizer across 5 slots (top, bottom, outerwear, footwear, accessory) with seasonal filters",
                 "Peer-to-peer lending with no money exchanged, for in-person nearby exchanges",
-                "AI image check comparing an item's condition before lending and after return",
-                "Uber-style user ratings that drop when damage is flagged",
-                "Complaint and compensation module for disputes over lent items",
+                "AI image verification that compares an item's condition before lending and after return to detect damage",
+                "Trust rating system that updates from verified returns",
+                "Complaint and compensation module that calculates reimbursement from damage severity",
                 "Thrift store add-on for buying and selling small items and accessories",
-                "AI product suggestions with affiliate links (Amazon, Myntra)"
+                "Planned: AI product suggestions with affiliate links (Amazon, Myntra)"
             ],
+            "stack": ["Java", "SQLite", "JDBC", "REST API", "DAO pattern", "Maven", "HTML5", "CSS3", "JavaScript (ES6)", "Cloudflare Tunnel"],
             "tags": ["Web App", "AI", "Community", "Sustainability"],
             "status": "Pilot with a group of 4 people; courier-based expansion planned",
             "link": "https://github.com/aryarnair16/wardrobeapp"
         }
+    ],
+    "certificates": [
+        { "title": "Internship Program in Artificial Intelligence", "issuer": "Qnayds LLP", "date": "4–9 Sept 2025" },
+        { "title": "Workshop Program on Artificial Intelligence (2 days)", "issuer": "Qnayds LLP", "date": "Sept 2025" },
+        { "title": "Quiz Program in Artificial Intelligence", "issuer": "Qnayds LLP", "date": "15 Aug 2025" },
+        { "title": "The Joy of Computing using Python", "issuer": "NPTEL · IIT Madras (SWAYAM)", "date": "12-week course, July – October 2026" },
+        { "title": "Web3xAgents Workshop", "issuer": "IEI TKMCE, CELESTRA'26", "date": "7 Feb 2026" },
+        { "title": "Trade the Chain (event)", "issuer": "T.K.M. College of Engineering, Hestia'26", "date": "22–24 Mar 2026" },
+        { "title": "IEEE Yearly Engineering Students Summit (YESS'25)", "issuer": "IEEE Kerala Section & IEEE LINK, NIT Calicut", "date": "20 Sept 2025" }
+    ],
+    "timeline": [
+        { "when": "2025", "title": "Started B.Tech in CSE", "note": "T.K.M. College of Engineering, Kollam" },
+        { "when": "15 Aug 2025", "title": "AI Quiz Program", "note": "Qnayds LLP" },
+        { "when": "4–9 Sept 2025", "title": "AI Internship Program", "note": "Qnayds LLP, one week" },
+        { "when": "Sept 2025", "title": "AI Workshop Program", "note": "Qnayds LLP, 2 days" },
+        { "when": "20 Sept 2025", "title": "IEEE YESS'25", "note": "Attended at NIT Calicut" },
+        { "when": "7 Feb 2026", "title": "Web3xAgents Workshop", "note": "CELESTRA'26, organised by IEI TKMCE" },
+        { "when": "22–24 Mar 2026", "title": "Hestia'26: Trade the Chain", "note": "National level techno-cultural fest, TKMCE" },
+        { "when": "Jul – Oct 2026", "title": "The Joy of Computing using Python", "note": "NPTEL · IIT Madras, 12 weeks" },
+        { "when": "Oct 2026", "title": "FOSSSoC-S1 Portfolio Week", "note": "Built and published this portfolio" }
+    ],
+    "involvement": [
+        { "role": "Executive Member", "org": "Web3 Club", "note": "Part of the core team organising club activities." },
+        { "role": "Member", "org": "IEI (The Institution of Engineers, India)", "note": "Student member." },
+        { "role": "Participant", "org": "FOSSSoC-S1, FOSS TKMCE", "note": "Built and published this portfolio with Git, GitHub Pages and an automated pull request." }
+    ],
+    "beyond": [
+        { "icon": "🏀", "title": "College Basketball", "text": "Played for the college team last year. Teamwork, stamina and staying calm under pressure." },
+        { "icon": "🤝", "title": "NSS", "text": "Took part in National Service Scheme programmes and gave time to community work." },
+        { "icon": "🎨", "title": "Arts Fest Volunteer", "text": "Volunteered at the college arts fest, where everything has to come together on the day." }
     ],
     "links": {
         "github": "https://github.com/aryarnair16",
