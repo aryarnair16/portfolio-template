@@ -1,16 +1,59 @@
 {
     "name": "Arya R Nair",
     "tagline": "CSE Student & Aspiring Web Developer",
-    "bio": "Second-year B.Tech student at T.K.M. College of Engineering, passionate about building clean tools and contributing to open source. I'm currently working on Wardrobe Networking, a platform for digital wardrobe sharing and apparel exchange.",
+    "bio": "Second-year B.Tech CSE student at T.K.M. College of Engineering, Kollam, interested in frontend development and data science. I like turning everyday problems into working web projects, and I'm currently building a digital wardrobe sharing platform.",
+    "interests": ["Frontend Development", "Data Science"],
     "skills": [
         "Python",
         "Java",
-        "C"
+        "C",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "Git",
+        "GitHub",
+        "VS Code"
+    ],
+    "education": [
+        {
+            "school": "T.K.M. College of Engineering, Kollam",
+            "degree": "B.Tech, Computer Science & Engineering",
+            "period": "Currently in second year"
+        }
+    ],
+    "involvement": [
+        {
+            "role": "Executive Member",
+            "org": "Web3 Club",
+            "note": "Part of the core team organising club activities."
+        },
+        {
+            "role": "Member",
+            "org": "IEI (The Institution of Engineers, India)",
+            "note": "Student member."
+        },
+        {
+            "role": "Participant",
+            "org": "FOSSSoC-S1, FOSS TKMCE",
+            "note": "Built and published this portfolio with Git, GitHub Pages and an automated pull request."
+        }
     ],
     "projects": [
         {
-            "title": "Wardrobe Networking",
-            "desc": "A digital wardrobe networking platform for apparel sharing.",
+            "title": "Wardrobe Randomizer + Networking",
+            "desc": "A web platform where users digitize their wardrobe, get auto-generated outfit combinations, and borrow items from nearby people instead of buying new ones.",
+            "features": [
+                "Digital wardrobe: upload clothes and accessories to build a personal catalog",
+                "Outfit generator that randomizes combinations from your own items",
+                "Peer-to-peer lending with no money exchanged, for in-person nearby exchanges",
+                "AI image check comparing an item's condition before lending and after return",
+                "Uber-style user ratings that drop when damage is flagged",
+                "Complaint and compensation module for disputes over lent items",
+                "Thrift store add-on for buying and selling small items and accessories",
+                "AI product suggestions with affiliate links (Amazon, Myntra)"
+            ],
+            "tags": ["Web App", "AI", "Community", "Sustainability"],
+            "status": "Pilot with a group of 4 people; courier-based expansion planned",
             "link": "https://github.com/aryarnair16/wardrobeapp"
         }
     ],
