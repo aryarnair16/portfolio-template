@@ -41,7 +41,7 @@
         { "title": "Internship Program in Artificial Intelligence", "issuer": "Qnayds LLP", "date": "4–9 Sept 2025" },
         { "title": "Workshop Program on Artificial Intelligence (2 days)", "issuer": "Qnayds LLP", "date": "Sept 2025" },
         { "title": "Quiz Program in Artificial Intelligence", "issuer": "Qnayds LLP", "date": "15 Aug 2025" },
-        { "title": "The Joy of Computing using Python", "issuer": "NPTEL · IIT Madras (SWAYAM)", "date": "12-week course, July – October 2026" },
+        { "title": "The Joy of Computing using Python", "issuer": "NPTEL · IIT Madras (SWAYAM)", "date": "12-week course, July – October 2026 · Exam taken, certificate awaited" },
         { "title": "Web3xAgents Workshop", "issuer": "IEI TKMCE, CELESTRA'26", "date": "7 Feb 2026" },
         { "title": "Trade the Chain (event)", "issuer": "T.K.M. College of Engineering, Hestia'26", "date": "22–24 Mar 2026" },
         { "title": "IEEE Yearly Engineering Students Summit (YESS'25)", "issuer": "IEEE Kerala Section & IEEE LINK, NIT Calicut", "date": "20 Sept 2025" }
@@ -54,7 +54,7 @@
         { "when": "20 Sept 2025", "title": "IEEE YESS'25", "note": "Attended at NIT Calicut" },
         { "when": "7 Feb 2026", "title": "Web3xAgents Workshop", "note": "CELESTRA'26, organised by IEI TKMCE" },
         { "when": "22–24 Mar 2026", "title": "Hestia'26: Trade the Chain", "note": "National level techno-cultural fest, TKMCE" },
-        { "when": "Jul – Oct 2026", "title": "The Joy of Computing using Python", "note": "NPTEL · IIT Madras, 12 weeks" },
+        { "when": "Jul – Oct 2026", "title": "The Joy of Computing using Python", "note": "NPTEL · IIT Madras, 12 weeks · exam taken, certificate awaited" },
         { "when": "Oct 2026", "title": "FOSSSoC-S1 Portfolio Week", "note": "Built and published this portfolio" }
     ],
     "involvement": [
@@ -63,7 +63,7 @@
         { "role": "Participant", "org": "FOSSSoC-S1, FOSS TKMCE", "note": "Built and published this portfolio with Git, GitHub Pages and an automated pull request." }
     ],
     "beyond": [
-        { "title": "College Basketball Team", "text": "Played for the college team last year." },
+        { "title": "College Basketball Team", "text": "Played for the college basketball team." },
         { "title": "NSS", "text": "Took part in National Service Scheme programmes." },
         { "title": "College Arts Fest", "text": "Volunteered at the college arts fest." }
     ],
