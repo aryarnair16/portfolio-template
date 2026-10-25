@@ -1,18 +1,20 @@
 :root {
-    --bg: #fff7f5;
-    --fg: #2b2b2b;
-    --muted: #6b5b5f;
-    --card: #ffffff;
-    --accent: #c2255c;
+    --bg: #f4efe6;
+    --fg: #1d2a44;
+    --muted: #5a6478;
+    --card: #fffaf0;
+    --accent: #1f3a6e;
+    --stitch: #e0a526;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #14101f;
-        --fg: #f3effa;
-        --muted: #b3a9c7;
-        --card: #211a33;
-        --accent: #f06595;
+        --bg: #0f1a2e;
+        --fg: #f1ead9;
+        --muted: #a9b3c7;
+        --card: #17253f;
+        --accent: #f2b632;
+        --stitch: #f2b632;
     }
 }
 
@@ -31,6 +33,9 @@ body {
 .hero {
     text-align: center;
     padding: 64px 20px 32px;
+    border-bottom: 3px dashed var(--stitch);
+    max-width: 860px;
+    margin: 0 auto 24px;
 }
 
 .hero h1 {
@@ -43,6 +48,7 @@ body {
 nav a {
     margin: 0 8px;
     color: var(--accent);
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -58,7 +64,7 @@ main {
 
 h2 {
     font-family: Georgia, "Times New Roman", serif;
-    border-left: 4px solid var(--accent);
+    border-left: 6px solid var(--stitch);
     padding-left: 10px;
 }
 
@@ -72,9 +78,9 @@ h2 {
 
 .chips li {
     background: var(--card);
-    border: 1px solid var(--accent);
+    border: 2px dashed var(--stitch);
     padding: 4px 14px;
-    border-radius: 99px;
+    border-radius: 6px;
 }
 
 .grid {
@@ -85,20 +91,21 @@ h2 {
 
 .card {
     background: var(--card);
-    padding: 16px;
-    border-radius: 16px;
-    border-top: 4px solid var(--accent);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px dashed var(--stitch);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px) rotate(-0.5deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card a {
     color: var(--accent);
+    font-weight: 600;
 }
 
 footer {
