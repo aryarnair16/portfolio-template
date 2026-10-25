@@ -1,19 +1,21 @@
 {
-    "name": "Your Name",
-    "tagline": "Your one-line introduction",
-    "bio": "Write 2 or 3 sentences about yourself.",
+    "name": "Arya R Nair",
+    "tagline": "CSE Student & Aspiring Web Developer",
+    "bio": "Second-year B.Tech student at T.K.M. College of Engineering, passionate about building clean tools and contributing to open source.",
     "skills": [
-        "Git",
-        "HTML"
+        "Python",
+        "Java",
+        "C"
     ],
     "projects": [
         {
-            "title": "My first project",
-            "desc": "What it does.",
-            "link": "https://github.com/yourname"
+            "title": "Wardrobe Networking",
+            "desc": "A digital wardrobe networking platform for apparel sharing.",
+            "link": "https://github.com/aryarnair16/wardrobeapp"
         }
     ],
     "links": {
-        "github": "https://github.com/yourname"
+        "github": "https://github.com/aryarnair16",
+        "linkedin": "https://www.linkedin.com/in/arya-r-nair-3b9813402/"
     }
 }
