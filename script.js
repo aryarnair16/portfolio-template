@@ -3,22 +3,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g,
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const safe = (u) => (/^https?:\/\//i.test(u) ? u : '#');
 const chips = (arr) => (arr || []).map((s) => `<li>${esc(s)}</li>`).join('');
-const root = document.documentElement;
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* Theme toggle */
-const themeBtn = $('theme');
-const updateThemeBtn = () => {
-    const dark = root.dataset.theme === 'dark';
-    themeBtn.textContent = dark ? '☀️' : '🌙';
-    themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-};
-themeBtn.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) { /* ignore */ }
-    updateThemeBtn();
-});
-updateThemeBtn();
 
 /* Back to top */
 const topBtn = $('top');
@@ -80,7 +65,7 @@ fetch('profile.json').then((r) => r.json()).then((p) => {
         `<a href="${safe(x.link)}" target="_blank" rel="noopener">View project</a></div>`).join('');
 
     $('certificates').innerHTML = (p.certificates || []).map((c) =>
-        `<div class="card patch"><h3>${esc(c.title)}</h3><p class="meta">${esc(c.issuer)}</p>` +
+        `<div class="card"><h3>${esc(c.title)}</h3><p class="meta">${esc(c.issuer)}</p>` +
         (c.date ? `<p>${esc(c.date)}</p>` : '') + `</div>`).join('');
 
     $('timeline').innerHTML = (p.timeline || []).map((t) =>
