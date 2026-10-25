@@ -63,9 +63,9 @@
         { "role": "Participant", "org": "FOSSSoC-S1, FOSS TKMCE", "note": "Built and published this portfolio with Git, GitHub Pages and an automated pull request." }
     ],
     "beyond": [
-        { "icon": "🏀", "title": "College Basketball", "text": "Played for the college team last year. Teamwork, stamina and staying calm under pressure." },
-        { "icon": "🤝", "title": "NSS", "text": "Took part in National Service Scheme programmes and gave time to community work." },
-        { "icon": "🎨", "title": "Arts Fest Volunteer", "text": "Volunteered at the college arts fest, where everything has to come together on the day." }
+        { "title": "College Basketball Team", "text": "Played for the college team last year." },
+        { "title": "NSS", "text": "Took part in National Service Scheme programmes." },
+        { "title": "College Arts Fest", "text": "Volunteered at the college arts fest." }
     ],
     "links": {
         "github": "https://github.com/aryarnair16",

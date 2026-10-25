@@ -96,8 +96,7 @@ fetch('profile.json').then((r) => r.json()).then((p) => {
         `<p>${esc(i.note)}</p></div>`).join('');
 
     $('beyond').innerHTML = (p.beyond || []).map((b) =>
-        `<div class="card"><h3><span aria-hidden="true">${esc(b.icon)}</span> ${esc(b.title)}</h3>` +
-        `<p>${esc(b.text)}</p></div>`).join('');
+        `<div class="card"><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p></div>`).join('');
 
     $('links').innerHTML = Object.entries(p.links || {}).map(([k, v]) =>
         `<a href="${safe(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join('');
