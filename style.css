@@ -1,17 +1,18 @@
 :root {
-    --bg: #fff;
-    --fg: #1a1a2e;
-    --muted: #5b6475;
-    --card: #f3f4f8;
-    --accent: #e8590c;
+    --bg: #fff7f5;
+    --fg: #2b2b2b;
+    --muted: #6b5b5f;
+    --card: #ffffff;
+    --accent: #c2255c;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #10111a;
-        --fg: #f2f2f7;
-        --muted: #a0a6b8;
-        --card: #1b1d2b;
+        --bg: #14101f;
+        --fg: #f3effa;
+        --muted: #b3a9c7;
+        --card: #211a33;
+        --accent: #f06595;
     }
 }
 
@@ -33,6 +34,7 @@ body {
 }
 
 .hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(2rem, 6vw, 3.4rem);
     margin: 0;
     color: var(--accent);
@@ -44,6 +46,10 @@ nav a {
     text-decoration: none;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
 main {
     max-width: 860px;
     margin: auto;
@@ -51,6 +57,7 @@ main {
 }
 
 h2 {
+    font-family: Georgia, "Times New Roman", serif;
     border-left: 4px solid var(--accent);
     padding-left: 10px;
 }
@@ -65,6 +72,7 @@ h2 {
 
 .chips li {
     background: var(--card);
+    border: 1px solid var(--accent);
     padding: 4px 14px;
     border-radius: 99px;
 }
@@ -78,7 +86,15 @@ h2 {
 .card {
     background: var(--card);
     padding: 16px;
-    border-radius: 12px;
+    border-radius: 16px;
+    border-top: 4px solid var(--accent);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .card a {
