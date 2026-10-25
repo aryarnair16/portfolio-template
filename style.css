@@ -1,18 +1,49 @@
+/* ========================================================
+   Theme: Denim & Mustard Tailored Portfolio (Dark & Light)
+   ======================================================== */
+
 :root {
-    --bg: #0e080c;
-    --card: rgba(26, 14, 22, 0.65);
-    --border: rgba(197, 160, 89, 0.24);
-    --border-hover: rgba(197, 160, 89, 0.55);
-    --fg: #f5efe6;
-    --muted: #a8969b;
-    --wine: #6b192e;
-    --wine-light: #87223b;
-    --wine-dark: #3b0c18;
-    --gold: #c5a059;
-    --gold-light: #dfbe79;
-    --gold-muted: rgba(197, 160, 89, 0.12);
-    --ink: #070305;
+    /* Dark Mode (Default) */
+    --bg: #0d141e;
+    --card: rgba(18, 28, 42, 0.72);
+    --border: rgba(229, 173, 53, 0.26);
+    --border-hover: rgba(229, 173, 53, 0.65);
+    --fg: #f4f6f9;
+    --muted: #95a7be;
+    --denim: #5b8ec2;
+    --denim-deep: #192a40;
+    --denim-surface: #223753;
+    --mustard: #e5ad35;
+    --mustard-light: #f5c45b;
+    --mustard-muted: rgba(229, 173, 53, 0.12);
+    --stitch: rgba(229, 173, 53, 0.42);
+    --float-icon: var(--mustard);
+    --float-opacity: 0.10;
+    --ink: #070a0e;
     color-scheme: dark;
+}
+
+/* Light Mode: Denim blue on ecru cotton canvas */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f6f4ee;
+        --card: rgba(255, 255, 255, 0.88);
+        --border: rgba(36, 74, 117, 0.24);
+        --border-hover: rgba(36, 74, 117, 0.65);
+        --fg: #152232;
+        --muted: #576b82;
+        --denim: #244a75;
+        --denim-deep: #162d47;
+        --denim-surface: #e9f0f8;
+        --mustard: #b88118;
+        --mustard-light: #9a6b12;
+        --mustard-muted: rgba(184, 129, 24, 0.12);
+        --stitch: rgba(36, 74, 117, 0.45);
+        --float-icon: var(--denim);
+        --float-opacity: 0.11;
+        --ink: #ffffff;
+        color-scheme: light;
+    }
 }
 
 * { box-sizing: border-box; }
@@ -27,8 +58,8 @@ body {
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     background-color: var(--bg);
     background-image:
-        radial-gradient(900px 520px at 10% -5%, rgba(107, 25, 46, 0.22), transparent 65%),
-        radial-gradient(800px 500px at 100% 45%, rgba(197, 160, 89, 0.08), transparent 60%);
+        radial-gradient(900px 520px at 8% -5%, rgba(36, 74, 117, 0.25), transparent 65%),
+        radial-gradient(800px 500px at 100% 45%, rgba(229, 173, 53, 0.10), transparent 60%);
     background-attachment: fixed;
     color: var(--fg);
     line-height: 1.65;
@@ -36,8 +67,8 @@ body {
 }
 
 :focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
+    outline: 2px dashed var(--mustard);
+    outline-offset: 3px;
 }
 
 #main:focus { outline: none; }
@@ -46,11 +77,11 @@ body {
     position: absolute;
     left: 8px;
     top: -60px;
-    background: var(--wine);
+    background: var(--denim-deep);
     color: var(--fg);
-    border: 1px solid var(--gold);
+    border: 1.5px dashed var(--mustard);
     padding: 8px 14px;
-    border-radius: 3px;
+    border-radius: 4px;
     z-index: 100;
     text-decoration: none;
     font-weight: 600;
@@ -59,8 +90,10 @@ body {
 
 .skip:focus { top: 8px; }
 
-/* Faint ambient glow layer */
-.ambient-glows {
+/* ========================================================
+   Floating Background: Soft Blobs + Outlines (8-12% opacity)
+   ======================================================== */
+.wardrobe-floaters {
     position: fixed;
     inset: 0;
     overflow: hidden;
@@ -68,32 +101,45 @@ body {
     z-index: 0;
 }
 
-.glow {
+.fl {
     position: absolute;
+    animation: drift 32s ease-in-out infinite;
+}
+
+.blob {
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(75px);
     pointer-events: none;
 }
 
-.wine-glow {
-    top: -100px;
-    left: -100px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(107, 25, 46, 0.18) 0%, transparent 70%);
+.denim-blob {
+    background: radial-gradient(circle, rgba(91, 142, 194, 0.22), transparent 70%);
 }
 
-.gold-glow {
-    top: 40%;
-    right: -150px;
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle, rgba(197, 160, 89, 0.07) 0%, transparent 70%);
+.mustard-blob {
+    background: radial-gradient(circle, rgba(229, 173, 53, 0.14), transparent 70%);
+}
+
+.fl.icon {
+    color: var(--float-icon);
+    opacity: var(--float-opacity);
+    transition: opacity 0.3s ease;
+}
+
+@keyframes drift {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(var(--dx, 25px), var(--dy, -25px)) rotate(5deg);
+    }
 }
 
 .topnav, .hero, main, footer { position: relative; z-index: 1; }
 
-/* Top Navigation */
+/* ========================================================
+   Top Navigation
+   ======================================================== */
 .topnav {
     position: sticky;
     top: 0;
@@ -106,10 +152,14 @@ body {
     padding-top: calc(12px + env(safe-area-inset-top, 0px));
     overflow-x: auto;
     white-space: nowrap;
-    background: rgba(14, 8, 12, 0.88);
+    background: rgba(13, 20, 30, 0.88);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1.5px dashed var(--border);
+}
+
+@media (prefers-color-scheme: light) {
+    .topnav { background: rgba(246, 244, 238, 0.90); }
 }
 
 .topnav a {
@@ -118,16 +168,18 @@ body {
     font-weight: 500;
     font-size: 0.9rem;
     padding: 6px 12px;
-    border-radius: 3px;
+    border-radius: 4px;
     transition: color 0.2s ease, background 0.2s ease;
 }
 
 .topnav a:hover {
-    background: var(--gold-muted);
+    background: var(--mustard-muted);
     color: var(--fg);
 }
 
-/* Hero Section */
+/* ========================================================
+   Hero & Monogram Denim Patch
+   ======================================================== */
 .hero {
     max-width: 860px;
     margin: 0 auto;
@@ -138,20 +190,20 @@ body {
     flex-wrap: wrap;
 }
 
-/* Wine & Gold Monogram Tile */
+/* Tailored Monogram Patch with Stitched Border */
 .avatar {
     flex: none;
     width: 108px;
     height: 108px;
     display: grid;
     place-items: center;
-    border-radius: 4px;
-    background: linear-gradient(145deg, #44101e 0%, #1e060d 100%);
-    border: 1px solid var(--gold);
+    border-radius: 6px;
+    background: linear-gradient(145deg, #18283c 0%, #0d1724 100%);
+    border: 2px dashed var(--mustard);
     box-shadow: 
-        0 8px 24px rgba(0, 0, 0, 0.45),
-        inset 0 0 0 1px rgba(197, 160, 89, 0.25);
-    color: var(--gold);
+        0 8px 24px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 2px rgba(229, 173, 53, 0.15);
+    color: var(--mustard);
     font: italic 600 2.4rem "Playfair Display", Georgia, serif;
     letter-spacing: 0.04em;
     user-select: none;
@@ -161,9 +213,9 @@ body {
 
 .hello {
     margin: 0;
-    color: var(--gold);
-    font-size: 0.9rem;
-    font-weight: 500;
+    color: var(--mustard);
+    font-size: 0.88rem;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -192,8 +244,8 @@ body {
     margin: 0 0 18px;
     padding: 6px 14px;
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 3px;
+    border: 1px dashed var(--border);
+    border-radius: 4px;
     font-size: 0.88rem;
     color: var(--fg);
 }
@@ -215,12 +267,13 @@ body {
 
 .hero nav { display: flex; flex-wrap: wrap; gap: 10px; }
 
+/* Buttons with Stitched Border */
 .hero nav a, .btn {
     display: inline-block;
     padding: 8px 18px;
-    border-radius: 3px;
-    border: 1px solid var(--gold);
-    background: var(--wine);
+    border-radius: 4px;
+    border: 1.5px dashed var(--mustard);
+    background: var(--denim-deep);
     color: var(--fg);
     font-size: 0.88rem;
     font-weight: 600;
@@ -231,15 +284,17 @@ body {
 }
 
 .hero nav a:hover, .btn:hover {
-    background: var(--wine-light);
-    border-color: var(--gold-light);
+    background: var(--denim);
+    border-color: var(--mustard-light);
+    color: #ffffff;
     transform: translateY(-2px);
-    color: var(--fg);
 }
 
 .btn { margin: 0 10px 10px 0; }
 
-/* Main Layout */
+/* ========================================================
+   Main Content Layout
+   ======================================================== */
 main {
     max-width: 860px;
     margin: auto;
@@ -252,10 +307,10 @@ h2 {
     font-family: "Playfair Display", Georgia, serif;
     font-weight: 600;
     font-size: 1.75rem;
-    color: var(--gold);
+    color: var(--mustard);
     margin: 0 0 16px;
     padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1.5px dashed var(--stitch);
     display: flex;
     align-items: center;
     letter-spacing: -0.01em;
@@ -270,7 +325,7 @@ h2 {
 .group {
     margin: 18px 0 8px;
     font-size: 0.82rem;
-    color: var(--gold);
+    color: var(--mustard);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
@@ -287,15 +342,15 @@ h2 {
 .stat {
     text-align: center;
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    border: 1.5px dashed var(--border);
+    border-radius: 6px;
     padding: 16px 12px;
 }
 
 .stat b {
     display: block;
     font: 600 2rem "Playfair Display", Georgia, serif;
-    color: var(--gold);
+    color: var(--mustard);
     line-height: 1.2;
 }
 
@@ -312,11 +367,11 @@ h2 {
 }
 
 .chips li {
-    background: rgba(107, 25, 46, 0.25);
-    border: 1px solid var(--border);
+    background: var(--denim-surface);
+    border: 1px dashed var(--border);
     color: var(--fg);
     padding: 4px 12px;
-    border-radius: 3px;
+    border-radius: 4px;
     font-size: 0.86rem;
 }
 
@@ -332,16 +387,16 @@ h2 {
 .card {
     background: var(--card);
     padding: 22px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+    border: 1.5px dashed var(--border);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-3px);
     border-color: var(--border-hover);
-    box-shadow: 0 10px 28px rgba(107, 25, 46, 0.22);
+    box-shadow: 0 10px 28px rgba(36, 74, 117, 0.25);
 }
 
 .card h3 {
@@ -353,7 +408,7 @@ h2 {
 }
 
 .card p { margin: 6px 0; font-size: 0.92rem; color: var(--muted); }
-.card a { color: var(--gold); font-weight: 600; text-decoration: none; }
+.card a { color: var(--mustard); font-weight: 600; text-decoration: none; }
 .card a:hover { text-decoration: underline; }
 
 .project { grid-column: 1 / -1; }
@@ -363,7 +418,7 @@ h2 {
     max-height: 320px;
     object-fit: cover;
     object-position: top;
-    border-radius: 3px;
+    border-radius: 4px;
     border: 1px solid var(--border);
     margin-bottom: 14px;
 }
@@ -372,7 +427,7 @@ details.features { margin: 12px 0; }
 
 details.features summary {
     cursor: pointer;
-    color: var(--gold);
+    color: var(--mustard);
     font-weight: 600;
     font-size: 0.9rem;
 }
@@ -386,7 +441,7 @@ details.arch { margin-top: 18px; }
     list-style: none;
     margin: 0;
     padding: 0 0 0 20px;
-    border-left: 1px solid var(--border);
+    border-left: 2px dashed var(--border);
 }
 
 .tl li {
@@ -398,14 +453,14 @@ details.arch { margin-top: 18px; }
 .tl li::before {
     content: "";
     position: absolute;
-    left: -26px;
+    left: -27px;
     top: 7px;
     width: 10px;
     height: 10px;
-    border-radius: 2px;
-    background: var(--gold);
+    border-radius: 50%;
+    background: var(--mustard);
     border: 2px solid var(--bg);
-    box-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+    box-shadow: 0 0 8px rgba(229, 173, 53, 0.4);
 }
 
 .tl h3 {
@@ -418,7 +473,7 @@ details.arch { margin-top: 18px; }
 .when {
     font-size: 0.76rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--mustard);
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
@@ -427,24 +482,24 @@ details.arch { margin-top: 18px; }
 .diagram {
     overflow-x: auto;
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 4px;
+    border: 1.5px dashed var(--border);
+    border-radius: 6px;
     padding: 16px;
     margin-top: 10px;
 }
 
 .diagram svg { width: 100%; min-width: 560px; height: auto; display: block; }
-.d-box { fill: rgba(45, 14, 25, 0.5); stroke: var(--gold); stroke-width: 1.2; }
+.d-box { fill: var(--denim-surface); stroke: var(--mustard); stroke-width: 1.2; }
 .d-t { fill: var(--fg); font: 600 13px "Inter", system-ui, sans-serif; }
 .d-s { fill: var(--muted); font: 11px "Inter", system-ui, sans-serif; }
 
-/* Footer & Back to top */
+/* Footer & Back to Top */
 footer {
     text-align: center;
     color: var(--muted);
     font-size: 0.88rem;
     padding: 64px 20px 44px;
-    border-top: 1px solid var(--border);
+    border-top: 1.5px dashed var(--border);
     margin-top: 60px;
 }
 
@@ -456,9 +511,9 @@ footer p { margin: 6px 0; }
     bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     width: 42px;
     height: 42px;
-    border-radius: 3px;
-    border: 1px solid var(--gold);
-    background: var(--wine);
+    border-radius: 4px;
+    border: 1.5px dashed var(--mustard);
+    background: var(--denim-deep);
     color: var(--fg);
     font-size: 1.1rem;
     font-weight: 700;
@@ -469,7 +524,7 @@ footer p { margin: 6px 0; }
     z-index: 60;
 }
 
-.totop:hover { background: var(--wine-light); }
+.totop:hover { background: var(--denim); color: #fff; }
 .totop.show { opacity: 1; pointer-events: auto; }
 
 /* Scroll reveal animations */
@@ -481,16 +536,16 @@ footer p { margin: 6px 0; }
 
 .reveal.in { opacity: 1; transform: none; }
 
-/* Responsive */
+/* Mobile adjustments */
 @media (max-width: 640px) {
-    .hide-sm { display: none; }
+    .hide-sm { display: none !important; }
     .hero { padding-top: 40px; gap: 20px; }
     .avatar { width: 92px; height: 92px; font-size: 2rem; }
 }
 
-/* Reduced motion preference */
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .dot { animation: none; }
-    .reveal, .card, .btn, .hero nav a, .totop { transition: none; }
+    .fl, .dot { animation: none !important; }
+    .reveal, .card, .btn, .hero nav a, .totop { transition: none !important; }
 }

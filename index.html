@@ -7,7 +7,7 @@
   <title>Arya R Nair | Portfolio</title>
   <meta name="description" content="Portfolio of Arya R Nair, a CSE student interested in frontend development, data science and AI at T.K.M. College of Engineering, Kollam.">
   <meta name="author" content="Arya R Nair">
-  <meta name="theme-color" content="#0e080c">
+  <meta name="theme-color" content="#0d141e">
   <meta property="og:title" content="Arya R Nair | Portfolio">
   <meta property="og:description" content="CSE student and aspiring web developer. Projects, skills and links.">
   <meta property="og:type" content="website">
@@ -21,10 +21,59 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Faint ambient wine & gold glows -->
-  <div class="ambient-glows" aria-hidden="true">
-    <div class="glow wine-glow"></div>
-    <div class="glow gold-glow"></div>
+  <!-- Floating Background: Soft Blobs + Wardrobe Outlines + Stitched Patches -->
+  <div class="wardrobe-floaters" aria-hidden="true">
+    <!-- Soft blurred ambient blobs -->
+    <div class="fl blob denim-blob" style="left:-6%; top:3%; width:420px; height:420px; --dx:40px; --dy:30px; animation-duration:36s;"></div>
+    <div class="fl blob mustard-blob hide-sm" style="right:-8%; top:36%; width:380px; height:380px; --dx:-35px; --dy:-40px; animation-duration:40s;"></div>
+
+    <!-- Clothes Hanger -->
+    <svg class="fl icon hanger" style="left:6%; top:18%; width:54px; --dx:25px; --dy:-25px; animation-duration:28s;" viewBox="0 0 64 48" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M32 12 C32 6, 38 4, 38 8 C38 11, 34 13, 32 16 L6 34 C4 35, 4 38, 7 38 L57 38 C60 38, 60 35, 58 34 L32 16 Z" />
+      <line x1="12" y1="38" x2="52" y2="38" stroke-dasharray="3 3"/>
+    </svg>
+
+    <!-- 4-Hole Button -->
+    <svg class="fl icon button-shape" style="right:12%; top:14%; width:36px; --dx:-20px; --dy:25px; animation-duration:24s; animation-delay:1.5s;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="24" cy="24" r="20" />
+      <circle cx="24" cy="24" r="14" stroke-dasharray="3 2" stroke-width="1.2" />
+      <circle cx="19" cy="19" r="2.2" fill="currentColor" />
+      <circle cx="29" cy="19" r="2.2" fill="currentColor" />
+      <circle cx="19" cy="29" r="2.2" fill="currentColor" />
+      <circle cx="29" cy="29" r="2.2" fill="currentColor" />
+      <line x1="19" y1="19" x2="29" y2="29" stroke-width="1.2" />
+      <line x1="29" y1="19" x2="19" y2="29" stroke-width="1.2" />
+    </svg>
+
+    <!-- Thread Spool -->
+    <svg class="fl icon spool hide-sm" style="right:16%; top:54%; width:38px; --dx:30px; --dy:-30px; animation-duration:32s; animation-delay:2s;" viewBox="0 0 48 56" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M10 8 H38 V14 H34 V42 H38 V48 H10 V42 H14 V14 H10 Z" />
+      <line x1="14" y1="20" x2="34" y2="20" stroke-dasharray="2 2" />
+      <line x1="14" y1="26" x2="34" y2="26" stroke-dasharray="2 2" />
+      <line x1="14" y1="32" x2="34" y2="32" stroke-dasharray="2 2" />
+      <line x1="14" y1="38" x2="34" y2="38" stroke-dasharray="2 2" />
+    </svg>
+
+    <!-- Needle and Thread -->
+    <svg class="fl icon needle hide-sm" style="left:12%; top:64%; width:44px; --dx:-25px; --dy:25px; animation-duration:30s; animation-delay:3s;" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M48 10 L16 42 L12 48 L18 44 L50 12 C52 10, 50 8, 48 10 Z" />
+      <ellipse cx="46" cy="14" rx="1.5" ry="3" transform="rotate(-45 46 14)" fill="currentColor" />
+      <path d="M47 13 Q56 6, 44 2 Q32 0, 36 10" stroke-dasharray="2 2" stroke-width="1.5" />
+    </svg>
+
+    <!-- Stitched Patch -->
+    <svg class="fl icon patch" style="right:8%; top:80%; width:46px; --dx:22px; --dy:-20px; animation-duration:28s;" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="4" y="4" width="46" height="46" rx="6" stroke-dasharray="5 3" />
+    </svg>
+
+    <!-- Small Button (Left) -->
+    <svg class="fl icon button-shape hide-sm" style="left:26%; top:42%; width:28px; --dx:18px; --dy:-22px; animation-duration:34s; animation-delay:4s;" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="24" cy="24" r="18" />
+      <circle cx="19" cy="19" r="2" fill="currentColor" />
+      <circle cx="29" cy="19" r="2" fill="currentColor" />
+      <circle cx="19" cy="29" r="2" fill="currentColor" />
+      <circle cx="29" cy="29" r="2" fill="currentColor" />
+    </svg>
   </div>
 
   <nav class="topnav" aria-label="Sections">
@@ -74,24 +123,24 @@
             <title id="arch-t">Architecture of the Wardrobe app: browser client, Java HTTP server, SQLite database and four services</title>
             <defs>
               <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0 0L10 5L0 10z" fill="var(--gold)" />
+                <path d="M0 0L10 5L0 10z" fill="var(--mustard)" />
               </marker>
             </defs>
             <rect class="d-box" x="10" y="100" width="140" height="70" rx="4" />
             <text class="d-t" x="80" y="130" text-anchor="middle">Browser client</text>
             <text class="d-s" x="80" y="150" text-anchor="middle">HTML · CSS · JS</text>
-            <line x1="150" y1="135" x2="250" y2="135" stroke="var(--gold)" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#ar)" />
+            <line x1="150" y1="135" x2="250" y2="135" stroke="var(--mustard)" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#ar)" />
             <text class="d-s" x="200" y="124" text-anchor="middle">REST / JSON</text>
             <text class="d-s" x="200" y="156" text-anchor="middle">via Tunnel</text>
             <rect class="d-box" x="250" y="90" width="200" height="90" rx="4" />
             <text class="d-t" x="350" y="127" text-anchor="middle">Java HTTP server</text>
             <text class="d-s" x="350" y="148" text-anchor="middle">com.sun.net.httpserver</text>
-            <line x1="450" y1="135" x2="550" y2="135" stroke="var(--gold)" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#ar)" />
+            <line x1="450" y1="135" x2="550" y2="135" stroke="var(--mustard)" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#ar)" />
             <text class="d-s" x="500" y="124" text-anchor="middle">DAO · JDBC</text>
             <rect class="d-box" x="550" y="100" width="150" height="70" rx="4" />
             <text class="d-t" x="625" y="130" text-anchor="middle">SQLite</text>
             <text class="d-s" x="625" y="150" text-anchor="middle">wardrobe.db</text>
-            <path d="M350 180V200M114 200H606M114 200V215M278 200V215M442 200V215M606 200V215" stroke="var(--gold)" stroke-width="1.5" fill="none" />
+            <path d="M350 180V200M114 200H606M114 200V215M278 200V215M442 200V215M606 200V215" stroke="var(--mustard)" stroke-width="1.5" fill="none" />
             <rect class="d-box" x="39" y="215" width="150" height="55" rx="4" />
             <text class="d-t" x="114" y="240" text-anchor="middle">Outfit randomizer</text>
             <text class="d-s" x="114" y="258" text-anchor="middle">5 slots · seasons</text>
