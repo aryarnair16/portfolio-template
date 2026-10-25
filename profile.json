@@ -1,8 +1,8 @@
 {
     "name": "Arya R Nair",
     "tagline": "CSE Student & Aspiring Web Developer",
-    "now": "Extending my Wardrobe Randomizer + Networking platform in Java",
-    "bio": "I'm a second-year B.Tech CSE student at T.K.M. College of Engineering, Kollam, interested in frontend development, data science and AI. My Wardrobe Randomizer + Networking platform began as a Java course project. I became so absorbed in it that I kept adding my own ideas and features, and I'm still building on it.",
+    "now": "Wardrobe Randomizer + Networking, a digital wardrobe sharing platform in Java",
+    "bio": "Second-year B.Tech CSE student at T.K.M. College of Engineering, Kollam, interested in frontend development, data science and AI. I like turning everyday problems into working web projects, and I'm currently building a digital wardrobe sharing platform in Java.",
     "interests": ["Frontend Development", "Data Science", "AI Development"],
     "skills": [
         { "group": "Languages", "items": ["Python", "Java", "C"] },
